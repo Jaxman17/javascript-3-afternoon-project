@@ -39,13 +39,13 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  let concatValues = ''
-  for(let key in person){
-    concatValues += person[key];
+let showValues = (obj) => {
+  rString = ''
+  for(let key in obj) {
+    rString+=obj[key]
   }
-  return concatValues;
-} 
+  return rString
+}
 
 
 
@@ -133,12 +133,10 @@ function secrets(obj){
   Delete the property password and return the object.
 */
 
-function removePassword(obj){
-  for(let key in obj){
-    delete obj[key];
-  }return obj;
+let removePassword = obj => {
+  delete obj['password']
+  return obj
 }
-
 
 
 ////////// PROBLEM 6 //////////
@@ -157,11 +155,10 @@ var deleteTheBigNumbers = {
 */
 
 for(let key in deleteTheBigNumbers){
-  if(!deleteTheBigNumbers[key] < 100){
+  if(deleteTheBigNumbers[key] > 100) {
     delete deleteTheBigNumbers[key]
   }
-} console.log(deleteTheBigNumbers);
-
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -173,7 +170,14 @@ for(let key in deleteTheBigNumbers){
   Return the updated object.
 */
 
-//Code Here
+const startsWithK = obj => {
+  for(let key in obj) {
+    if(key.toLowerCase().startsWith('k')){
+     delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 
@@ -188,6 +192,13 @@ for(let key in deleteTheBigNumbers){
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+const hiddenTreasure = object => {
+  for(let key in object){
+    if(!object[key].includes('treasure')) {
+      delete object[key]
+    }
+  }
+  return object
+}
 
 
